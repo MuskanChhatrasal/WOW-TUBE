@@ -17,7 +17,7 @@ const Navbar = () => {
         </Link>
       </div>
       <ul className="header-nav">
-        <li
+        {/* <li
           style={{
             cursor: "pointer",
             marginRight: "20rem",
@@ -37,7 +37,7 @@ const Navbar = () => {
               marginLeft: "-2rem",
             }}
           ></i>
-        </li>
+        </li> */}
 
         <li
           style={{

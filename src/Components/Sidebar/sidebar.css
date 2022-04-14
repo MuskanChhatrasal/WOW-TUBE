@@ -6,7 +6,7 @@
 }
 
 .video-sidebar{
-    background-color: #383838;
+    background-color: var(--dark-background);
     height: 41.25rem;
-    border-right: 2px solid white;
+    border-right: 2px solid var(--text-white);
 }

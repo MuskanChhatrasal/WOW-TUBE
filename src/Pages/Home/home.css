@@ -21,7 +21,7 @@
     width: 18rem;
     cursor: pointer;
     margin-bottom: -6rem;
-    /* margin-left: 25rem; */
+   
     box-shadow: 0 0 8px var(--medium-blue-gray);
     margin-top: 4rem;
 }
@@ -31,6 +31,8 @@
     height: 10rem;
     object-fit: cover;
 }
+
+
 
 .card-details {
     position: relative;
@@ -53,14 +55,12 @@
     flex-wrap: wrap;
     gap: 4rem;
     min-width: 62rem;
-    /* grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    grid-gap: 1rem; */
-    /* padding: 1.5rem; */
 }
 
 .card-dropdown {
     position: absolute;
-    background: #2e2d2df7;
+    background: var(--dropdown-background);
+    color: var(--text-white);
     border: 1px solid #525151;
     z-index: 2;
     right: 1.2rem;

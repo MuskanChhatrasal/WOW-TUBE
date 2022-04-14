@@ -1,7 +1,8 @@
 @import url("https://wow-ui02.netlify.app/wow.css");
+@import url('./Utils/root.css');
 
 body{
-    background-color: #383838 !important;
+    background-color: var(--dark-background) !important;
 }
 
 img {

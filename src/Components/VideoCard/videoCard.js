@@ -22,10 +22,12 @@ const VideoCard = ({ video }) => {
         {dropdown && (
           <ul className="card-dropdown">
             <li>
-              <i className="fas fa-clock mr-0p5"></i> Add to watch later
+              <i className="fas fa-clock" style={{ marginRight: "0.5rem" }}></i>{" "}
+              Add to watch later
             </li>
             <li>
-              <i className="fas fa-play mr-0p5"></i> Add to playlist
+              <i className="fas fa-play" style={{ marginRight: "0.5rem" }}></i>{" "}
+              Add to playlist
             </li>
           </ul>
         )}
