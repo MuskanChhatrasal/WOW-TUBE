@@ -2,10 +2,11 @@
 
 .side-tags {
     cursor: pointer !important;
+    color: var(--text-white)
 }
 
 .video-sidebar{
-    background-color: var(--text-white);
+    background-color: #383838;
     height: 41.25rem;
-    box-shadow: 0 0 8px var(--medium-blue-gray);
+    border-right: 2px solid white;
 }

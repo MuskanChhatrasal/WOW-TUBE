@@ -6,12 +6,15 @@ const Sidebar = () => {
   return (
     <nav
       className="sidebar video-sidebar"
-      style={{ marginTop: "-1rem", marginLeft: "-10rem" }}
+      style={{
+        marginLeft: "-10rem",
+        width: "14rem",
+      }}
     >
       <div>
         <div
           className="list-topic side-tags"
-          style={{ marginTop: "3rem", fontSize: "1.35rem" }}
+          style={{ marginTop: "1rem", fontSize: "1.35rem" }}
         >
           <Link to="/">
             <i class="fas fa-home" style={{ marginRight: "0.75rem" }}></i>

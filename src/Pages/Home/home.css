@@ -1,3 +1,8 @@
+
+.main-container{
+    display: flex;
+    width: 100%;
+}
 .btn-label {
     width: 10rem;
     padding: 0.7rem 1rem;
@@ -15,8 +20,8 @@
 .video-card {
     width: 18rem;
     cursor: pointer;
-    margin-bottom: 1rem;
-    margin-left: 25rem;
+    margin-bottom: -6rem;
+    /* margin-left: 25rem; */
     box-shadow: 0 0 8px var(--medium-blue-gray);
     margin-top: 4rem;
 }
@@ -39,11 +44,44 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    color: var(--text-white);
+    margin-left: 0.7rem;
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    grid-gap: 1rem;
-    padding: 1.5rem;
+.video-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    min-width: 62rem;
+    /* grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-gap: 1rem; */
+    /* padding: 1.5rem; */
+}
+
+.card-dropdown {
+    position: absolute;
+    background: #2e2d2df7;
+    border: 1px solid #525151;
+    z-index: 2;
+    right: 1.2rem;
+    top: 2rem;
+}
+
+.card-dropdown>li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.drop-dotes{
+    margin-left: 14rem;
+    color: var(--text-white);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.video-card:last-child{
+    margin-bottom: 2rem;
 }
