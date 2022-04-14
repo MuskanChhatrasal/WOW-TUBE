@@ -49,12 +49,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// img {
-// 	max-width: 100%;
-// 	max-height: 100%;
-// 	margin: auto;
-// 	display: block;
-// }
-
-// min-width: 125rem;
