@@ -1,21 +1,29 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Pages/Home/home";
 import History from "./Pages/History/history";
 import Playlist from "./Pages/Playlist/playlist";
 import WatchLater from "./Pages/WatchLater/watchLater";
 import Liked from "./Pages/Liked/liked";
 import Navbar from "./Components/Navbar/navbar";
+import Login from "./Pages/Authentication/login";
+import Signup from "./Pages/Authentication/signup";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <Navbar />
+      {location.pathname === "/login" ||
+      location.pathname === "/signup" ? null : (
+        <Navbar />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/liked" element={<Liked />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

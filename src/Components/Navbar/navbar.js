@@ -46,7 +46,9 @@ const Navbar = () => {
             border: "2px solid white",
           }}
         >
-          <a style={{ border: "none" }}>Login</a>
+          <a style={{ border: "none" }} href="/login">
+            Login
+          </a>
         </li>
         <li>
           <button className="menu">
