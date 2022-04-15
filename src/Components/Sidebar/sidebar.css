@@ -1,0 +1,12 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+.side-tags {
+    cursor: pointer !important;
+    color: var(--text-white)
+}
+
+.video-sidebar{
+    background-color: var(--dark-background);
+    height: 41.25rem;
+    border-right: 2px solid var(--text-white);
+}

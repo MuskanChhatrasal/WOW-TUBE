@@ -1,0 +1,87 @@
+
+.main-container{
+    display: flex;
+    width: 100%;
+}
+.btn-label {
+    width: 10rem;
+    padding: 0.7rem 1rem;
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn-label:hover{
+    background-color: var(--primary-dark-color);
+    color: var(--text-white);
+}
+
+.video-card {
+    width: 18rem;
+    cursor: pointer;
+    margin-bottom: -6rem;
+   
+    box-shadow: 0 0 8px var(--medium-blue-gray);
+    margin-top: 4rem;
+}
+
+.card-img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+}
+
+
+
+.card-details {
+    position: relative;
+}
+
+.card-title {
+    font-weight: 700;
+    height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--text-white);
+    margin-left: 0.7rem;
+}
+
+.video-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    min-width: 62rem;
+}
+
+.card-dropdown {
+    position: absolute;
+    background: var(--dropdown-background);
+    color: var(--text-white);
+    border: 1px solid #525151;
+    z-index: 2;
+    right: 1.2rem;
+    top: 2rem;
+}
+
+.card-dropdown>li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.drop-dotes{
+    margin-left: 14rem;
+    color: var(--text-white);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.video-card:last-child{
+    margin-bottom: 2rem;
+}
