@@ -7,6 +7,7 @@ import Liked from "./Pages/Liked/liked";
 import Navbar from "./Components/Navbar/navbar";
 import Login from "./Pages/Authentication/login";
 import Signup from "./Pages/Authentication/signup";
+import Mockman from "mockman-js";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/liked" element={<Liked />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>
   );
