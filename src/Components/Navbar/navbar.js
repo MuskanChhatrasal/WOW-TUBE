@@ -1,8 +1,10 @@
 import React from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/authContext";
 
 const Navbar = () => {
+  const { authData, logout } = useAuth();
   return (
     <header
       className="header"
@@ -39,7 +41,7 @@ const Navbar = () => {
           ></i>
         </li> */}
 
-        <li
+        {/* <li
           style={{
             cursor: "pointer",
             color: "white",
@@ -49,6 +51,32 @@ const Navbar = () => {
           <a style={{ border: "none" }} href="/login">
             Login
           </a>
+        </li> */}
+        <li style={{ marginTop: "0.75rem", cursor: "pointer" }}>
+          {!authData.firstName ? (
+            <i class="fas fa-user-alt"></i>
+          ) : (
+            `Hello, ${authData.firstName}`
+          )}
+        </li>
+        <li style={{ cursor: "pointer" }}>
+          {authData.firstName ? (
+            <a onClick={() => logout()}>
+              <i
+                class="fas fa-sign-out-alt"
+                style={{ marginRight: "0.5rem" }}
+              ></i>
+              Logout
+            </a>
+          ) : (
+            <Link to="/login">
+              <i
+                class="fas fa-sign-in-alt"
+                style={{ marginRight: "0.5rem" }}
+              ></i>
+              Login
+            </Link>
+          )}
         </li>
         <li>
           <button className="menu">

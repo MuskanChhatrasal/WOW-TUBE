@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar/navbar";
 import Login from "./Pages/Authentication/login";
 import Signup from "./Pages/Authentication/signup";
 import Mockman from "mockman-js";
+import { RestrictAuth } from "./Components/RequireAuth/restrictedAuth";
 
 function App() {
   const location = useLocation();
@@ -23,8 +24,10 @@ function App() {
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/liked" element={<Liked />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route element={<RestrictAuth />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>
