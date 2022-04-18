@@ -49,6 +49,7 @@ const Signup = () => {
   return (
     <div className="wrapper" style={{ marginLeft: "30rem" }}>
       <h2 style={{ fontSize: "2rem", marginTop: "-2.5rem" }}>Sign-Up</h2>
+      {error.isError && <span style={{ color: "red" }}>{error.text} !!</span>}
       <form
         onSubmit={(e) => {
           e.preventDefault();

@@ -25,7 +25,7 @@ const Login = () => {
       style={{ marginLeft: "30rem", marginTop: "7rem" }}
     >
       <h2 style={{ fontSize: "2rem" }}>Login</h2>
-
+      {error.isError && <span style={{ color: "red" }}>{error.text} !!</span>}
       <form
         onSubmit={(e) => {
           e.preventDefault();
