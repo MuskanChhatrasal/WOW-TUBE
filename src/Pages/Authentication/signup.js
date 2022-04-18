@@ -118,11 +118,16 @@ const Signup = () => {
           />
           <h3>I accept all terms & condition</h3>
         </div>
-        <div className="input-box">
-          <input type="Submit" value="Register Now" onClick={submitHandler} />
+        <div>
+          <input
+            type="Submit"
+            value="Register Now"
+            className="button btn-primary "
+            onClick={submitHandler}
+          />
         </div>
         <div className="text">
-          <h3>
+          <h3 style={{ marginLeft: "0.2rem" }}>
             Already have an account?
             <Link to="/login">
               <a>Login now</a>

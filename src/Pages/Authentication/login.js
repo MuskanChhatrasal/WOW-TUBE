@@ -25,7 +25,7 @@ const Login = () => {
       style={{ marginLeft: "30rem", marginTop: "7rem" }}
     >
       <h2 style={{ fontSize: "2rem" }}>Login</h2>
-      {error.isError && <span style={{ color: "red" }}>{error.text} !!</span>}
+      {error.isError && <span style={{ color: "red" }}>{error.text}</span>}
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -51,17 +51,28 @@ const Login = () => {
             }
           />
         </div>
-        <div className="input-box">
-          <input
-            type="Submit"
-            value="Login Now"
-            onClick={() => submitHandler()}
-          />
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <div>
+            <input
+              type="Submit"
+              value="Login Now"
+              className="button btn-primary"
+              onClick={() => submitHandler()}
+            />
+          </div>
+          <div>
+            <input
+              type="Submit"
+              value="Test Login"
+              className="button btn-primary"
+              onClick={() => testlogin()}
+            />
+          </div>
         </div>
-        <div className="input-box">
-          <input type="Submit" value="Test Login" onClick={() => testlogin()} />
-        </div>
-        <div className="text">
+        <div
+          className="text"
+          style={{ marginTop: "2rem", marginLeft: "-1rem" }}
+        >
           <h3>
             Not having an account?
             <Link to="/signup">
