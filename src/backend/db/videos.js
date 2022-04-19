@@ -14,6 +14,7 @@ export const videos = [
     uploaded: "Feb 26, 2018",
     imgUrl:
       "https://www.indianhealthyrecipes.com/wp-content/uploads/2018/09/bread-pizza-recipe.jpg",
+    isMustWatch: true,
   },
   {
     _id: "xL6wySUJXbE",
@@ -26,6 +27,7 @@ export const videos = [
     uploaded: "Sep 27, 2017",
     imgUrl:
       "https://www.sharmispassions.com/wp-content/uploads/2020/03/WhiteSaucePasta1.jpg",
+    isMustWatch: false,
   },
   {
     _id: "ie5NdWCXK3A",
@@ -38,6 +40,7 @@ export const videos = [
     uploaded: "Jan 28, 2018",
     imgUrl:
       "https://img-global.cpcdn.com/recipes/e2d051f38e7d2f7c/1200x630cq70/photo.jpg",
+    isMustWatch: false,
   },
   {
     _id: "erXfC_hs7Ew",
@@ -50,6 +53,7 @@ export const videos = [
     uploaded: "Jul 1, 2016",
     imgUrl:
       "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/06/23/Pictures/_a468a0a2-b572-11ea-b8d7-dab47869eae4.jpg",
+    isMustWatch: true,
   },
 
   {
@@ -63,6 +67,7 @@ export const videos = [
     uploaded: "Oct 2, 2020",
     imgUrl:
       "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/schezwan-fried-rice-recipe.jpg",
+    isMustWatch: false,
   },
   {
     _id: "JOko1ygjPwk",
@@ -74,6 +79,7 @@ export const videos = [
     uploaded: "Jun 5, 2020",
     imgUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOPP9EtZx0jcF1wd-dVSF-aA4h7nKtVPdMSw&usqp=CAU",
+    isMustWatch: true,
   },
   {
     _id: "y32sMVJ1IY4",
@@ -85,6 +91,7 @@ export const videos = [
     uploaded: "Jul 29, 2015",
     imgUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEueEGgIn2S-Xky5o2jMtalwzW3YbVPx-DwA&usqp=CAU",
+    isMustWatch: false,
   },
 
   {
@@ -97,6 +104,7 @@ export const videos = [
     category: "Italian",
     uploaded: "Mar 25, 2018",
     imgUrl: "https://i.ytimg.com/vi/SGSsXWXkqiA/hqdefault.jpg",
+    isMustWatch: true,
   },
 
   {
@@ -110,6 +118,7 @@ export const videos = [
     uploaded: "Nov 8, 2017",
     imgUrl:
       "https://www.namscorner.com/wp-content/uploads/2018/11/choco_lava_Cake/WhatsApp-Image-2018-11-28-at-10.55.25-PM.jpeg",
+    isMustWatch: false,
   },
   {
     _id: "bStNpajvHcU",
@@ -122,5 +131,6 @@ export const videos = [
     uploaded: "Mar 23, 2021",
     imgUrl:
       "https://preppykitchen.com/wp-content/uploads/2019/06/Chocolate-cake-recipe-1200a.jpg",
+    isMustWatch: true,
   },
 ];

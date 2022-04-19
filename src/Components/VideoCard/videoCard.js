@@ -8,6 +8,7 @@ const VideoCard = ({ video }) => {
     }
     return word;
   };
+
   return (
     <div className="video-card">
       <img className="card-img" src={video.imgUrl} />
