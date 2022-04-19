@@ -24,6 +24,19 @@ const Videos = () => {
     }
     return word;
   };
+
+  useEffect(() => {
+    let tempVideos = [...allVideos];
+    if (selectedCategory === "All") {
+      setFilteredVideos(tempVideos);
+    } else {
+      tempVideos = tempVideos.filter(
+        (it) => it.categoryName === selectedCategory
+      );
+      setFilteredVideos(tempVideos);
+    }
+  }, [selectedCategory]);
+
   return (
     <div className="main-container">
       <Sidebar />
@@ -51,7 +64,7 @@ const Videos = () => {
             return (
               <button
                 className="btn-label font-bold"
-                // onClick={() => setSelectedCategory(item.categoryName)}
+                onClick={() => setSelectedCategory(item.categoryName)}
               >
                 {item.categoryName}
               </button>
@@ -60,42 +73,79 @@ const Videos = () => {
         </div>
 
         <div className="video-flex">
-          {allVideos.map((video) => {
-            return (
-              <div className="video-cards">
-                <img className="card-img" src={video.imgUrl} />
-                <div className="flex-row card-details">
-                  <div>
-                    <div className="card-title">
-                      {trimHeading(video.title, 30)}
-                    </div>
-                    <span onClick={() => setDropdown(!dropdown)}>
-                      <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
-                    </span>
-                  </div>
+          {filteredVideos.length > 0
+            ? filteredVideos.map((video) => {
+                return (
+                  <div className="video-cards">
+                    <img className="card-img" src={video.imgUrl} />
+                    <div className="flex-row card-details">
+                      <div>
+                        <div className="card-title">
+                          {trimHeading(video.title, 30)}
+                        </div>
+                        <span onClick={() => setDropdown(!dropdown)}>
+                          <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
+                        </span>
+                      </div>
 
-                  {dropdown && (
-                    <ul className="card-dropdown">
-                      <li>
-                        <i
-                          className="fas fa-clock"
-                          style={{ marginRight: "0.5rem" }}
-                        ></i>{" "}
-                        Add to watch later
-                      </li>
-                      <li>
-                        <i
-                          className="fas fa-play"
-                          style={{ marginRight: "0.5rem" }}
-                        ></i>{" "}
-                        Add to playlist
-                      </li>
-                    </ul>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+                      {dropdown && (
+                        <ul className="card-dropdown">
+                          <li>
+                            <i
+                              className="fas fa-clock"
+                              style={{ marginRight: "0.5rem" }}
+                            ></i>
+                            Add to watch later
+                          </li>
+                          <li>
+                            <i
+                              className="fas fa-play"
+                              style={{ marginRight: "0.5rem" }}
+                            ></i>
+                            Add to playlist
+                          </li>
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                );
+              })
+            : allVideos.map((video) => {
+                return (
+                  <div className="video-cards">
+                    <img className="card-img" src={video.imgUrl} />
+                    <div className="flex-row card-details">
+                      <div>
+                        <div className="card-title">
+                          {trimHeading(video.title, 30)}
+                        </div>
+                        <span onClick={() => setDropdown(!dropdown)}>
+                          <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
+                        </span>
+                      </div>
+
+                      {dropdown && (
+                        <ul className="card-dropdown">
+                          <li>
+                            <i
+                              className="fas fa-clock"
+                              style={{ marginRight: "0.5rem" }}
+                            ></i>{" "}
+                            Add to watch later
+                          </li>
+                          <li>
+                            <i
+                              className="fas fa-play"
+                              style={{ marginRight: "0.5rem" }}
+                            ></i>
+                            Add to playlist
+                          </li>
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

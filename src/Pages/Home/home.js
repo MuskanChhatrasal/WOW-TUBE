@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
 import "./home.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import VideoCard from "../../Components/VideoCard/videoCard";
 import { useCategory } from "../../Context/categoryContext";
 import { useVideo } from "../../Context/videoContext";
@@ -12,7 +12,7 @@ const Home = () => {
   const { categoryData, getCategories, selectedCategory, setSelectedCategory } =
     useCategory();
   const { getAllVideos, allVideos, cardLoading, cardError } = useVideo();
-  const [filteredVideos, setFilteredVideos] = useState([]);
+  let Navigate = useNavigate();
 
   useEffect(() => {
     getCategories();
@@ -78,7 +78,10 @@ const Home = () => {
             return (
               <button
                 className="btn-label font-bold"
-                // onClick={() => setSelectedCategory(item.categoryName)}
+                onClick={() => {
+                  setSelectedCategory(item.categoryName);
+                  Navigate("/videos");
+                }}
               >
                 {item.categoryName}
               </button>
