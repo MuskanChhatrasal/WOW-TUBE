@@ -7,10 +7,18 @@ import VideoCard from "../../Components/VideoCard/videoCard";
 const Home = () => {
   const [videos, setVideos] = useState([]);
 
-  useEffect(async () => {
-    const response = await axios.get("/api/videos");
-    console.log(response.data.videos);
-    setVideos(response.data.videos);
+  // useEffect(async () => {
+  //   const response = await axios.get("/api/videos");
+  //   console.log(response.data.videos);
+  //   setVideos(response.data.videos);
+  // }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("/api/videos");
+      console.log(response.data.videos);
+      setVideos(response.data.videos);
+    })();
   }, []);
 
   return (

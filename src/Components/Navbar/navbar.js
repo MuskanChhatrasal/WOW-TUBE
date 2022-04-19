@@ -1,8 +1,10 @@
 import React from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/authContext";
 
 const Navbar = () => {
+  const { authData, logout } = useAuth();
   return (
     <header
       className="header"
@@ -17,36 +19,42 @@ const Navbar = () => {
         </Link>
       </div>
       <ul className="header-nav">
-        {/* <li
-          style={{
-            cursor: "pointer",
-            marginRight: "20rem",
-            position: "relative",
-          }}
-        >
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search here"
-          />
-          <i
-            class="fas fa-search"
-            style={{
-              color: "white",
-              position: "absolute",
-              marginLeft: "-2rem",
-            }}
-          ></i>
-        </li> */}
-
+        <li style={{ marginTop: "0.75rem", cursor: "pointer", color: "white" }}>
+          {!authData.firstName ? (
+            <i class="fas fa-user-alt"></i>
+          ) : (
+            `Hello, ${authData.firstName}`
+          )}
+        </li>
         <li
           style={{
             cursor: "pointer",
             color: "white",
-            border: "2px solid white",
           }}
         >
-          <a style={{ border: "none" }}>Login</a>
+          {authData.firstName ? (
+            <a onClick={() => logout()} style={{ border: "1px solid white" }}>
+              <i
+                class="fas fa-sign-out-alt"
+                style={{
+                  marginRight: "0.5rem",
+                  color: "white",
+                }}
+              ></i>
+              Logout
+            </a>
+          ) : (
+            <Link
+              to="/login"
+              style={{ color: "white", border: "1px solid white" }}
+            >
+              <i
+                class="fas fa-sign-in-alt"
+                style={{ marginRight: "0.5rem" }}
+              ></i>
+              Login
+            </Link>
+          )}
         </li>
         <li>
           <button className="menu">
