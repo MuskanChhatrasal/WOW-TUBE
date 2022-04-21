@@ -54,9 +54,9 @@ const Home = () => {
             }}
           >
             <p className="font-bold text-3xl">
-              Learn Best Food Reciepes with top
+              Learn Best Food Receipes with top
             </p>
-            <p className="font-bold text-3xl">class videos from WOW TUBE</p>
+            <p className="font-bold text-3xl">videos from WOW TUBE</p>
             <Link className="btn-hero font-bold text-base" to="/videos">
               Videos
             </Link>

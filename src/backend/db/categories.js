@@ -30,4 +30,10 @@ export const categories = [
     description:
       "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
   },
+  {
+    _id: uuid(),
+    categoryName: "Cake",
+    description:
+      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+  },
 ];
