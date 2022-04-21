@@ -1,8 +1,13 @@
 import React from "react";
+import Sidebar from "../../Components/Sidebar/sidebar";
 import "./watchLater.css";
 
 const WatchLater = () => {
-  return <div>WatchLater</div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 };
 
 export default WatchLater;
