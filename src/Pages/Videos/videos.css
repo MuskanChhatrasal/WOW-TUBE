@@ -8,9 +8,9 @@
 .video-cards:hover{
     background-color: #85828280;
 }
-.video-cards:last-child {
+/* .video-cards:last-child {
     margin-bottom: 2rem;
-}
+} */
 
 .spacer{
     width: 100%;
