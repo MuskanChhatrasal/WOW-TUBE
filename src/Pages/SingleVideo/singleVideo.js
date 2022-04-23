@@ -1,48 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
 import VideoCard from "../../Components/VideoCard/videoCard";
 import "./singleVideo.css";
+import { useParams } from "react-router-dom";
+import { useSingleVideo } from "../../Context/singleVideoContext";
+import { useVideo } from "../../Context/videoContext";
+import SingleVideoCard from "../../Components/SingleVideoCard/singleVideoCard";
+import { Link } from "react-router-dom";
 
 const SingleVideo = () => {
+  const { videoId } = useParams();
+
+  const [dropdown, setDropdown] = useState(false);
+
+  const { getSingleVideo, singleVideo, issinglecardLoading, singlecardError } =
+    useSingleVideo();
+  const { getAllVideos, allVideos, iscardLoading, cardError } = useVideo();
+
+  const [filteredVideos, setFilteredVideos] = useState([]);
+
+  const trimHeading = (word, n) => {
+    if (word.length > n) {
+      return word.substring(0, n - 3) + "...";
+    }
+    return word;
+  };
+  useEffect(() => {
+    getSingleVideo(videoId);
+    getAllVideos();
+  }, [videoId]);
+
+  useEffect(() => {
+    let tempVideos = [...allVideos].filter(
+      (video) =>
+        video.categoryName === singleVideo.categoryName &&
+        video._id !== singleVideo._id
+    );
+    setFilteredVideos(tempVideos);
+  }, [singleVideo]);
+
+  useEffect(() => {
+    console.log(videoId);
+  });
   return (
     <div className="main-singleVideo-container">
       <Sidebar />
       <div className="middle-container">
-        <div className="header-container">
-          <div className="left-header-container">
-            <img
-              src="https://www.namscorner.com/wp-content/uploads/2018/11/choco_lava_Cake/WhatsApp-Image-2018-11-28-at-10.55.25-PM.jpeg"
-              alt="pizza"
-              className="img-avatar"
-            />
-            <span className="singleCard-title">Title</span>
-          </div>
-          <div className="right-header-container">
-            <span>
-              <i class="fas fa-clock watch-later-icon"></i>
-              <p className="p-watchLater">Watch later</p>
-            </span>
-            <span>
-              <i class="fas fa-share share-icon"></i>
-              <p className="p-share">Share</p>
-            </span>
-          </div>
-        </div>
-        <div className="card-footer">
-          <span className="card-footer-title">
-            Watch on<i class="fab fa-youtube youtube-icon"></i>YouTube
-          </span>
-        </div>
+        <SingleVideoCard singleVideo={singleVideo} />
 
         <div className="bottom-container">
           <div className="bottom-upper-container">
             <div className="left-bottomUpper">
-              <span className="bottom-title">Title</span>
+              <span className="bottom-title">{singleVideo.title}</span>
             </div>
             <div className="right-bottomUpper">
-              <span className="bottom-time">Time</span>
-              <span className="bottom-views">Views</span>
-              <span className="bottom-likes">Likes</span>
+              <span className="bottom-time">{singleVideo.timeDuration}</span>
+              <span className="bottom-views">{singleVideo.views}</span>
+              <span className="bottom-likes">{singleVideo.likes}</span>
             </div>
           </div>
           <div className="bottom-upper-container">
@@ -52,7 +66,9 @@ const SingleVideo = () => {
                 alt="pizza"
                 className="img-avatar"
               />
-              <span className="singleCard-bottom-title">Title</span>
+              <span className="singleCard-bottom-title">
+                {singleVideo.creator}
+              </span>
             </div>
             <div className="right-footer-container">
               <span className="like-btn">
@@ -61,22 +77,27 @@ const SingleVideo = () => {
               </span>
               <span className="watchLater-btn">
                 <i class="fas fa-clock watch-icon"></i>
-                <span className="watchlater-txt">Watch later</span>
+                <span className="watchlater-txt">Add to Watch later</span>
               </span>
             </div>
           </div>
 
           <div className="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p>{singleVideo.description}</p>
           </div>
         </div>
       </div>
-      <div className="right-container">Hello People</div>
+      <div className="right-container">
+        <section>
+          {filteredVideos.length > 0 ? (
+            filteredVideos
+              .slice(0, 3)
+              .map((video) => <VideoCard video={video} />)
+          ) : (
+            <div>Failed to load recommended videos</div>
+          )}
+        </section>
+      </div>
     </div>
   );
 };

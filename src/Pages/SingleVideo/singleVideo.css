@@ -4,7 +4,7 @@
 
 .middle-container{
     width: 50rem;
-    background-color: aqua;
+    background-color: #2c2e3b95;
     height: 30rem;
     margin-top: 2rem;
     margin-left: 15rem;
@@ -12,8 +12,8 @@
 
 .right-container{
     width: 20rem;
-    background-color: blueviolet;
-    margin-top: 2rem;
+    /* background-color: blueviolet; */
+    margin-top: -2rem;
     margin-left: 2rem;
 }
 
@@ -99,34 +99,71 @@
 .right-bottomUpper{
     display: flex;
     justify-content: space-between;
-    margin-left: 37rem;
+    margin-left: 20rem;
     margin-top: -1rem;
 }
 
 .bottom-title{
     color: var(--text-white);
-    font-size: 1.5rem;
+    height: 1rem; 
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    width: 20rem;
 }
-
+/* .left-bottomUpper{
+    display: inline-block;
+    height: 8rem;
+    width: 20rem;
+} */
 .bottom-time{
     color: var(--text-white);
     margin-top: 1rem;
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+    margin-right: 0.8rem;
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.bottom-time:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
 }
 
 .bottom-views{
     color: var(--text-white);
     margin-top: 1rem;
     margin-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.bottom-views:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
 }
 
 .bottom-likes{
     color: var(--text-white);
     margin-top: 1rem;
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+    /* margin-right: 0.5rem; */
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.bottom-likes:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
 }
 
 .left-footer-container{
@@ -136,7 +173,7 @@
 
 .right-footer-container{
     display: flex;
-    margin-left: 35rem;
+    margin-left: 25rem;
 }
 
 .singleCard-bottom-title{
@@ -160,7 +197,7 @@
 .watchLater-btn{
     margin-left: 1rem;
     background-color: #2c2e3b95;
-    width: 8rem;
+    width: 12rem;
     height: 2rem;
     border-radius: 0.5rem;
     margin-right: 1rem;
@@ -207,11 +244,18 @@
 
 .desc-container{
     /* margin-left: 0rem; */
-    height: 8rem;
-    width: 50rem;
+    /* height: 8rem;
+    width: 50rem; */
     margin-top: 2rem;
     margin-bottom: 2rem;
     color: var(--text-white);
     background-color: #2c2e3b95;
     padding: 1rem;
 }
+
+
+
+
+
+
+
