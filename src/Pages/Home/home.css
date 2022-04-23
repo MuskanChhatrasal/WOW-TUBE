@@ -20,9 +20,12 @@
 .video-card {
     width: 18rem;
     cursor: pointer;
-    margin-bottom: -6rem;
+    margin-bottom: -2rem;
     box-shadow: 0 0 8px var(--medium-blue-gray);
     margin-top: 4rem;
+    padding: 0.5rem;
+    border: 2px solid var(--dropdown-background);
+    border-radius: 0.2rem;
 }
 
 .video-card:hover{
@@ -60,6 +63,7 @@
     flex-wrap: wrap;
     gap: 4rem;
     min-width: 62rem;
+    /* margin-bottom: -2rem; */
 }
 
 .card-dropdown {
@@ -87,12 +91,27 @@
     right: 0.5rem;
 }
 
-.video-card:last-child{
+/* .video-card:last-child{
+    margin-bottom: 2rem;
+} */
+/* .video-card:nth-last-child(2) {
+    margin-bottom: 2rem;
+} */
+.featured-card{
+    margin-bottom: -6rem;
+}
+.featured-card:last-child{
     margin-bottom: 2rem;
 }
-.video-card:nth-last-child(2) {
+.featured-card:nth-last-child(2){
     margin-bottom: 2rem;
 }
+.category-card{
+  margin-bottom: -6rem;
+}
+/* .category-card:last-child{
+    margin-bottom: 2rem;
+} */
 
 .container-hero {
     max-height: 30rem;

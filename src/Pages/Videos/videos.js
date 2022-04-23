@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
 import { useCategory } from "../../Context/categoryContext";
 import { useVideo } from "../../Context/videoContext";
-import { Link } from "react-router-dom";
 import "./videos.css";
 import VideoCard from "../../Components/VideoCard/videoCard";
 
@@ -16,14 +15,6 @@ const Videos = () => {
     getCategories();
     getAllVideos();
   }, []);
-
-  const [dropdown, setDropdown] = useState(false);
-  const trimHeading = (word, n) => {
-    if (word.length > n) {
-      return word.substring(0, n - 3) + "...";
-    }
-    return word;
-  };
 
   useEffect(() => {
     let tempVideos = [...allVideos];
@@ -75,76 +66,10 @@ const Videos = () => {
         <div className="video-flex">
           {filteredVideos.length > 0
             ? filteredVideos.map((video) => {
-                return (
-                  <div className="video-cards">
-                    <img className="card-img" src={video.imgUrl} />
-                    <div className="flex-row card-details">
-                      <div>
-                        <div className="card-title">
-                          {trimHeading(video.title, 30)}
-                        </div>
-                        <span onClick={() => setDropdown(!dropdown)}>
-                          <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
-                        </span>
-                      </div>
-
-                      {dropdown && (
-                        <ul className="card-dropdown">
-                          <li>
-                            <i
-                              className="fas fa-clock"
-                              style={{ marginRight: "0.5rem" }}
-                            ></i>
-                            Add to watch later
-                          </li>
-                          <li>
-                            <i
-                              className="fas fa-play"
-                              style={{ marginRight: "0.5rem" }}
-                            ></i>
-                            Add to playlist
-                          </li>
-                        </ul>
-                      )}
-                    </div>
-                  </div>
-                );
+                return <VideoCard video={video} />;
               })
             : allVideos.map((video) => {
-                return (
-                  <div className="video-cards">
-                    <img className="card-img" src={video.imgUrl} />
-                    <div className="flex-row card-details">
-                      <div>
-                        <div className="card-title">
-                          {trimHeading(video.title, 30)}
-                        </div>
-                        <span onClick={() => setDropdown(!dropdown)}>
-                          <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
-                        </span>
-                      </div>
-
-                      {dropdown && (
-                        <ul className="card-dropdown">
-                          <li>
-                            <i
-                              className="fas fa-clock"
-                              style={{ marginRight: "0.5rem" }}
-                            ></i>{" "}
-                            Add to watch later
-                          </li>
-                          <li>
-                            <i
-                              className="fas fa-play"
-                              style={{ marginRight: "0.5rem" }}
-                            ></i>
-                            Add to playlist
-                          </li>
-                        </ul>
-                      )}
-                    </div>
-                  </div>
-                );
+                return <VideoCard video={video} />;
               })}
         </div>
       </div>

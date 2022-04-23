@@ -27,7 +27,7 @@ function App() {
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/liked" element={<Liked />} />
         <Route path="/videos" element={<Videos />} />
-        <Route path="/singlevideo" element={<SingleVideo />} />
+        <Route path="/singlevideo/:videoId" element={<SingleVideo />} />
         <Route element={<RestrictAuth />}>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
