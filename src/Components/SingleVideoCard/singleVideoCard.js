@@ -4,15 +4,20 @@ const SingleVideoCard = ({ singleVideo }) => {
   return (
     <>
       <div className="header-container">
-        <div className="left-header-container">
-          <img
-            src="https://www.namscorner.com/wp-content/uploads/2018/11/choco_lava_Cake/WhatsApp-Image-2018-11-28-at-10.55.25-PM.jpeg"
-            alt="pizza"
-            className="img-avatar"
-          />
+        <iframe
+          // width="100%"
+          width="780px"
+          height="450px"
+          frameBorder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          src={`https://www.youtube.com/embed/${singleVideo.url}`}
+          title="Youtube video"
+        ></iframe>
+        {/* <div className="left-header-container">
           <span className="singleCard-title">{singleVideo.title}</span>
-        </div>
-        <div className="right-header-container">
+        </div> */}
+        {/* <div className="right-header-container">
           <span>
             <i class="fas fa-clock watch-later-icon"></i>
             <p className="p-watchLater">Watch later</p>
@@ -21,13 +26,13 @@ const SingleVideoCard = ({ singleVideo }) => {
             <i class="fas fa-share share-icon"></i>
             <p className="p-share">Share</p>
           </span>
-        </div>
+        </div> */}
       </div>
-      <div className="card-footer">
+      {/* <div className="card-footer">
         <span className="card-footer-title">
           Watch on<i class="fab fa-youtube youtube-icon"></i>YouTube
         </span>
-      </div>
+      </div> */}
     </>
   );
 };

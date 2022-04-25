@@ -30,7 +30,7 @@ const VideoCard = ({ video }) => {
       </Link>
       <div className="flex-row card-details">
         <div>
-          <div className="card-title">{trimHeading(video.title, 30)}</div>
+          <div className="card-title">{trimHeading(video.title, 28)}</div>
           <span onClick={() => setDropdown(!dropdown)}>
             <i class="fas fa-ellipsis-v drop-dotes" size={34}></i>
           </span>

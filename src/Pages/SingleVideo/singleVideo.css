@@ -19,7 +19,8 @@
 
 .header-container{
     display: flex;
-    justify-content: space-between;
+    height: 20rem;
+    /* justify-content: space-between; */
 }
 
 .left-header-container{
@@ -86,7 +87,7 @@
 
 .bottom-container{
     display: flex;
-    margin-top: 2rem;
+    margin-top: 15rem;
     margin-left: 0rem;
     width: 50rem;
     flex-direction: column;
@@ -251,6 +252,11 @@
     color: var(--text-white);
     background-color: #2c2e3b95;
     padding: 1rem;
+}
+
+iframe{
+    width: 56rem !important;
+    height: 30rem !important;
 }
 
 
