@@ -8,6 +8,7 @@ import { AuthProvider } from "./Context/authContext";
 import { CategoryProvider } from "./Context/categoryContext";
 import { VideoProvider } from "./Context/videoContext";
 import { SingleVideoProvider } from "./Context/singleVideoContext";
+import { WatchLaterProvider } from "./Context/watchLaterContext";
 
 // Call make Server
 makeServer();
@@ -17,11 +18,13 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <CategoryProvider>
-          <VideoProvider>
-            <SingleVideoProvider>
-              <App />
-            </SingleVideoProvider>
-          </VideoProvider>
+          <WatchLaterProvider>
+            <VideoProvider>
+              <SingleVideoProvider>
+                <App />
+              </SingleVideoProvider>
+            </VideoProvider>
+          </WatchLaterProvider>
         </CategoryProvider>
       </AuthProvider>
     </BrowserRouter>
