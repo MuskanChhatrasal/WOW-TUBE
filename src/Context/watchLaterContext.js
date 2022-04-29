@@ -48,6 +48,7 @@ const WatchLaterProvider = ({ children }) => {
   };
 
   const addItemToWatchLater = async (video) => {
+    console.log("videos:", video);
     dispatch({ type: "LOADING" });
     try {
       const response = await axios.post(

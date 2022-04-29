@@ -9,8 +9,10 @@ import Login from "./Pages/Authentication/login";
 import Signup from "./Pages/Authentication/signup";
 import Mockman from "mockman-js";
 import { RestrictAuth } from "./Components/RequireAuth/restrictedAuth";
+
 import Videos from "./Pages/Videos/videos";
 import SingleVideo from "./Pages/SingleVideo/singleVideo";
+import { RequireAuth } from "./Components/RequireAuth/requireAuth";
 
 function App() {
   const location = useLocation();
@@ -24,7 +26,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/playlist" element={<Playlist />} />
-        <Route path="/watchlater" element={<WatchLater />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/watchlater" element={<WatchLater />} />
+        </Route>
         <Route path="/liked" element={<Liked />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/singlevideo/:videoId" element={<SingleVideo />} />

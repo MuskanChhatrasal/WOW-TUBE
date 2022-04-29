@@ -1,0 +1,16 @@
+.watchLater-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.videos-flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 80rem;
+    margin-bottom: 15rem;
+}
+.watchlater-card {
+    margin-left: 17rem;
+    max-height: 15rem;
+    margin-right: -14rem;
+}

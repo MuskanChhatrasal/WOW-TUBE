@@ -101,7 +101,7 @@ const Home = () => {
         </h2>
         <div className="video-flex">
           {mustWatchVideos.map((video) => {
-            return <VideoCard video={video} />;
+            return <VideoCard video={video} key={video._id} />;
           })}
         </div>
       </div>
@@ -110,5 +110,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// https://thumbs.dreamstime.com/b/banner-raw-uncooked-ingredients-cooking-pasta-background-food-healthy-eating-concept-186934703.jpg

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useWatchLater } from "../../Context/watchLaterContext";
 
 const VideoCard = ({ video }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -12,6 +13,25 @@ const VideoCard = ({ video }) => {
     return word;
   };
 
+  const {
+    addItemToWatchLater,
+    removeItemFromWatchLater,
+    getWatchLaterVideos,
+    watchLaterVideos,
+  } = useWatchLater();
+
+  useEffect(() => {
+    getWatchLaterVideos();
+  }, []);
+
+  // const handleDropDown = () => {
+  //   setDropdown(!dropdown);
+
+  //   setTimeout(() => {
+  //     setDropdown(!dropdown);
+  //   }, 500);
+  // };
+
   return (
     <div
       className={
@@ -19,6 +39,8 @@ const VideoCard = ({ video }) => {
           ? "video-card featured-card"
           : "video-card" && location.pathname === "/videos"
           ? "video-card category-card"
+          : "video-card" && location.pathname === "/watchlater"
+          ? "video-card watchlater-card"
           : "video-card"
       }
     >
@@ -38,10 +60,29 @@ const VideoCard = ({ video }) => {
 
         {dropdown && (
           <ul className="card-dropdown">
-            <li>
-              <i className="fas fa-clock" style={{ marginRight: "0.5rem" }}></i>
-              Add to watch later
-            </li>
+            {watchLaterVideos.some((it) => it._id === video._id) ? (
+              <li onClick={() => removeItemFromWatchLater(video._id)}>
+                <i
+                  className="fas fa-clock"
+                  style={{ marginRight: "0.5rem" }}
+                ></i>
+                Remove from watch later
+              </li>
+            ) : (
+              <li
+                onClick={() => {
+                  addItemToWatchLater(video);
+                  console.log("watch later:", watchLaterVideos);
+                }}
+              >
+                <i
+                  className="fas fa-clock"
+                  style={{ marginRight: "0.5rem" }}
+                ></i>
+                Add to watch later
+              </li>
+            )}
+
             <li>
               <i className="fas fa-play" style={{ marginRight: "0.5rem" }}></i>
               Add to playlist
