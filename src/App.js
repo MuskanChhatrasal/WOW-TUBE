@@ -24,9 +24,10 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
+
         <Route path="/playlist" element={<Playlist />} />
         <Route element={<RequireAuth />}>
+          <Route path="/history" element={<History />} />
           <Route path="/watchlater" element={<WatchLater />} />
         </Route>
         <Route path="/liked" element={<Liked />} />

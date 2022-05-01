@@ -18,12 +18,6 @@ const WatchLater = () => {
   return (
     <div className="watchLater-flex">
       <Sidebar />
-
-      {/* <div className="video-flex">
-        {mustWatchVideos.map((video) => {
-          return <VideoCard video={video} key={video._id} />;
-        })}
-      </div> */}
       <div className="videos-flex">
         {watchLaterVideos ? (
           watchLaterVideos.map((video) => {

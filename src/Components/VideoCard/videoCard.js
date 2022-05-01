@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useHistory } from "../../Context/historyContext";
 import { useWatchLater } from "../../Context/watchLaterContext";
 
 const VideoCard = ({ video }) => {
@@ -20,6 +21,8 @@ const VideoCard = ({ video }) => {
     watchLaterVideos,
   } = useWatchLater();
 
+  const { addVideoToHistory, removeVideoFromHistory } = useHistory();
+
   useEffect(() => {
     getWatchLaterVideos();
   }, []);
@@ -39,14 +42,15 @@ const VideoCard = ({ video }) => {
           ? "video-card featured-card"
           : "video-card" && location.pathname === "/videos"
           ? "video-card category-card"
-          : "video-card" && location.pathname === "/watchlater"
+          : ("video-card" && location.pathname === "/watchlater") ||
+            location.pathname === "/history"
           ? "video-card watchlater-card"
           : "video-card"
       }
     >
       <Link
         to={`/singlevideo/${video._id}`}
-        // onClick={() => addVideoToHistory(item)}
+        onClick={() => addVideoToHistory(video)}
       >
         <img className="card-img" src={video.imgUrl} />
       </Link>
@@ -83,10 +87,23 @@ const VideoCard = ({ video }) => {
               </li>
             )}
 
-            <li>
-              <i className="fas fa-play" style={{ marginRight: "0.5rem" }}></i>
-              Add to playlist
-            </li>
+            {location.pathname === "/history" ? (
+              <li onClick={() => removeVideoFromHistory(video._id)}>
+                <i
+                  className="fas fa-play"
+                  style={{ marginRight: "0.5rem" }}
+                ></i>
+                Remove from History
+              </li>
+            ) : (
+              <li>
+                <i
+                  className="fas fa-play"
+                  style={{ marginRight: "0.5rem" }}
+                ></i>
+                Add to Playlist
+              </li>
+            )}
           </ul>
         )}
       </div>
