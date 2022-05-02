@@ -1,0 +1,270 @@
+.main-singleVideo-container{
+    display: flex;
+}
+
+.middle-container{
+    width: 50rem;
+    background-color: #2c2e3b95;
+    height: 30rem;
+    margin-top: 2rem;
+    margin-left: 15rem;
+}
+
+.right-container{
+    width: 20rem;
+    /* background-color: blueviolet; */
+    margin-top: -2rem;
+    margin-left: 2rem;
+}
+
+.header-container{
+    display: flex;
+    height: 20rem;
+    /* justify-content: space-between; */
+}
+
+.left-header-container{
+    display: flex;
+}
+
+.right-header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.watch-later-icon{
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-top: 1rem;
+    margin-left: -1rem;
+}
+
+.share-icon{
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-top: 1rem;
+}
+.p-watchLater{
+    margin-left: -2rem;
+    margin-right: 1.2rem;
+    color: var(--text-white);
+}
+
+.p-share{
+    margin-right: 1.2rem;
+    color: var(--text-white);
+}
+
+.img-avatar{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.singleCard-title{
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+}
+
+.card-footer{
+    margin-top: 22rem;
+    margin-left: 0rem;
+    height: 3rem;
+    width: 12rem;
+    background-color: #2c2e3b95;
+}
+.card-footer-title{
+   display: inline-block;
+   position: relative;
+   top: 0.8rem;
+   left: 0.5rem;
+}
+.youtube-icon{
+    margin-left: 0.5rem;
+}
+
+.bottom-container{
+    display: flex;
+    margin-top: 12rem;
+    margin-left: 0rem;
+    width: 50rem;
+    flex-direction: column;
+}
+
+.bottom-upper-container{
+    display: flex;
+}
+
+.right-bottomUpper{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 18rem;
+    margin-top: -1rem;
+}
+
+.bottom-title{
+    color: var(--text-white);
+    height: 1rem; 
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    /* width: 20rem; */
+}
+/* .left-bottomUpper{
+    display: inline-block;
+    height: 8rem;
+    width: 20rem;
+} */
+.bottom-time{
+    color: var(--text-white);
+    margin-top: 1rem;
+    margin-right: 0.8rem;
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+.bottom-time:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
+}
+
+.bottom-views{
+    color: var(--text-white);
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+.bottom-views:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
+}
+
+.bottom-likes{
+    color: var(--text-white);
+    margin-top: 1rem;
+    /* margin-right: 0.5rem; */
+    font-size: 1rem;
+    background-color: #2c2e3b95;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+.bottom-likes:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
+}
+
+.left-footer-container{
+    display: flex;
+    margin-left: -1rem;
+}
+
+.right-footer-container{
+    display: flex;
+    margin-left: 21.5rem;
+}
+
+.singleCard-bottom-title{
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    margin-left: 0.8rem;
+    color: var(--text-white);
+}
+
+.like-btn{
+    margin-left: -4rem;
+    background-color: #2c2e3b95;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 1.2rem;
+    
+}
+
+.watchLater-btn{
+    margin-left: 1rem;
+    background-color: #2c2e3b95;
+    width: 12rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    margin-top: 1.2rem;
+}
+
+.like-txt{
+    position: relative;
+    top: 0.3rem;
+    left: 1.2rem;
+    color: var(--text-white);
+}
+
+.watchlater-txt{
+    position: relative;
+    top: 0.3rem;
+    left: 1.2rem;
+    color: var(--text-white);
+}
+
+.like-icon{
+    color: var(--text-white);
+    position: relative;
+    top: 0.3rem;
+    left: 0.8rem;
+}
+
+.watch-icon{
+    color: var(--text-white);
+    position: relative;
+    top: 0.3rem;
+    left: 0.8rem;
+}
+
+.like-btn:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
+}
+
+.watchLater-btn:hover{
+    background-color: var(--primary-dark-color);
+    cursor: pointer;
+}
+
+.desc-container{
+    /* margin-left: 0rem; */
+    /* height: 8rem;
+    width: 50rem; */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+    background-color: #2c2e3b95;
+    padding: 1rem;
+}
+
+iframe{
+    width: 56rem !important;
+    height: 30rem !important;
+}
+
+
+
+
+
+
+

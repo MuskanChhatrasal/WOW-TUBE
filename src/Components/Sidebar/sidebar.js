@@ -25,6 +25,15 @@ const Sidebar = () => {
 
       <div>
         <div className="list-topic side-tags" style={{ fontSize: "1.35rem" }}>
+          <Link to="/videos">
+            <i class="fas fa-video" style={{ marginRight: "0.75rem" }}></i>
+            <span>Videos</span>
+          </Link>
+        </div>
+      </div>
+
+      <div>
+        <div className="list-topic side-tags" style={{ fontSize: "1.35rem" }}>
           <Link to="/playlist">
             <i class="fas fa-play" style={{ marginRight: "0.75rem" }}></i>
             <span>Playlist</span>

@@ -1,0 +1,8 @@
+.clear-all-btn{
+    margin-left: 21rem;
+    margin-top: 2rem;
+    background-color: var(--primary-dark-color);
+    color: var(--text-white);
+    padding: 0.5rem;
+}
+
