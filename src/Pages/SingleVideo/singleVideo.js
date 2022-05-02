@@ -7,6 +7,7 @@ import { useSingleVideo } from "../../Context/singleVideoContext";
 import { useVideo } from "../../Context/videoContext";
 import SingleVideoCard from "../../Components/SingleVideoCard/singleVideoCard";
 import { Link } from "react-router-dom";
+import { useWatchLater } from "../../Context/watchLaterContext";
 
 const SingleVideo = () => {
   const { videoId } = useParams();
@@ -16,6 +17,9 @@ const SingleVideo = () => {
   const { getSingleVideo, singleVideo, issinglecardLoading, singlecardError } =
     useSingleVideo();
   const { getAllVideos, allVideos, iscardLoading, cardError } = useVideo();
+
+  const { addItemToWatchLater, removeItemFromWatchLater, watchLaterVideos } =
+    useWatchLater();
 
   const [filteredVideos, setFilteredVideos] = useState([]);
 
@@ -75,9 +79,31 @@ const SingleVideo = () => {
                 <i class="fas fa-heart like-icon"></i>
                 <span className="like-txt">Like</span>
               </span>
+
               <span className="watchLater-btn">
-                <i class="fas fa-clock watch-icon"></i>
-                <span className="watchlater-txt">Add to Watch later</span>
+                {watchLaterVideos.some(
+                  (item) => item._id === singleVideo._id
+                ) ? (
+                  <>
+                    <i class="fas fa-clock watch-icon"></i>
+                    <span
+                      className="watchlater-txt"
+                      onClick={() => removeItemFromWatchLater(singleVideo._id)}
+                    >
+                      Remove Watchlater
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <i class="fas fa-clock watch-icon"></i>
+                    <span
+                      className="watchlater-txt"
+                      onClick={() => addItemToWatchLater(singleVideo)}
+                    >
+                      Add to watch later
+                    </span>
+                  </>
+                )}
               </span>
             </div>
           </div>

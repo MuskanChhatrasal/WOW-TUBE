@@ -6,7 +6,7 @@
 export const videos = [
   {
     _id: "_6a7vOp7Nm0",
-    title: "Bread Pizza Sandwich on Tawa Recipe",
+    title: "Bread Pizza Sandwich",
     description:
       "Pizza is liked by every one whether it be a smaller one in house or the elder ones. But making pizza is a cumbersome process and it takes a lot of time and patience. That is the reason  most of the time, we do not bake pizza at home and just order it from outside. ",
     creator: "INDIA Eats",
@@ -36,7 +36,7 @@ export const videos = [
   },
   {
     _id: "ie5NdWCXK3A",
-    title: "No Oven No Yeast Paneer Pizza",
+    title: "No Oven Paneer Pizza",
     description:
       "Now make this awesomely delicious pizza without using yeast or oven at home. You can checkout our veg. pizza without oven recipe for details steps to make pizza sauce.",
     creator: "The Terrace Kitchen",
@@ -51,7 +51,7 @@ export const videos = [
   },
   {
     _id: "erXfC_hs7Ew",
-    title: "Chinese Chopsuey Recipe",
+    title: "Famous Chinese Chopsuey",
     description:
       "Saucy vegetables topped with crisp fried noodles, a popular recipe of Indo Chinese cuisine is Chinese Chopsuey. So with Varun learn to make Chinese Chopsuey at home only on Rajshri Food.",
     creator: "Rajshri Food",
@@ -82,7 +82,7 @@ export const videos = [
   },
   {
     _id: "JOko1ygjPwk",
-    title: "The BEST-EVER Spanish Potatoes",
+    title: "The Spanish Potatoes",
     description:
       "Spain on a Fork is a member of the Amazon Affiliates Program. If you purchase through these links, you pay the same price, and Spain on a Fork receives a small commission, which helps with all the expenses to keep Spain on a Fork going.",
     creator: "Spain on a Fork",
@@ -129,7 +129,7 @@ export const videos = [
 
   {
     _id: "4B-njzVxO8g",
-    title: "Eggless Choco Lava Cake in Pressure Cooker",
+    title: "Eggless Choco Lava Cake",
     description:
       " Baking is a very crucial part of this recipe. If you overcook this cake, you will not get any lava at the center of the cake.",
     creator: "The Terrace Kitchen",
@@ -144,7 +144,7 @@ export const videos = [
   },
   {
     _id: "bStNpajvHcU",
-    title: "Best Chocolate Cake Recipe.",
+    title: "Best Chocolate Cake",
     description:
       "Best Chocolate Cake Recipe, Easy Chocolate Cake Recipe, Eggless and Without Oven, Birthday Cake ",
     creator: "With Dr.Alisha",
