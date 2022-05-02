@@ -5,13 +5,7 @@ import { useHistory } from "../../Context/historyContext";
 import "./history.css";
 
 const History = () => {
-  const {
-    getHistoryVideos,
-    clearHistory,
-    HistoryData,
-    isHistoryLoading,
-    HistoryError,
-  } = useHistory();
+  const { getHistoryVideos, clearHistory, HistoryData } = useHistory();
 
   useEffect(() => {
     getHistoryVideos();

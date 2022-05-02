@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
 import "./home.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,11 +7,8 @@ import { useCategory } from "../../Context/categoryContext";
 import { useVideo } from "../../Context/videoContext";
 
 const Home = () => {
-  // const [videos, setVideos] = useState([]);
-
-  const { categoryData, getCategories, selectedCategory, setSelectedCategory } =
-    useCategory();
-  const { getAllVideos, allVideos, cardLoading, cardError } = useVideo();
+  const { categoryData, getCategories, setSelectedCategory } = useCategory();
+  const { getAllVideos, allVideos } = useVideo();
   let Navigate = useNavigate();
 
   useEffect(() => {

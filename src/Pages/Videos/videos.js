@@ -8,7 +8,7 @@ import VideoCard from "../../Components/VideoCard/videoCard";
 const Videos = () => {
   const { categoryData, getCategories, selectedCategory, setSelectedCategory } =
     useCategory();
-  const { getAllVideos, allVideos, cardLoading, cardError } = useVideo();
+  const { getAllVideos, allVideos } = useVideo();
   const [filteredVideos, setFilteredVideos] = useState([]);
 
   useEffect(() => {

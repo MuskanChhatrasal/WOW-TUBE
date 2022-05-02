@@ -5,12 +5,7 @@ import { useWatchLater } from "../../Context/watchLaterContext";
 import "./watchLater.css";
 
 const WatchLater = () => {
-  const {
-    addItemToWatchLater,
-    removeItemFromWatchLater,
-    getWatchLaterVideos,
-    watchLaterVideos,
-  } = useWatchLater();
+  const { getWatchLaterVideos, watchLaterVideos } = useWatchLater();
 
   useEffect(() => {
     getWatchLaterVideos();

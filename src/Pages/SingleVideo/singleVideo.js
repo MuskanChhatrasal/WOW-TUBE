@@ -6,29 +6,19 @@ import { useParams } from "react-router-dom";
 import { useSingleVideo } from "../../Context/singleVideoContext";
 import { useVideo } from "../../Context/videoContext";
 import SingleVideoCard from "../../Components/SingleVideoCard/singleVideoCard";
-import { Link } from "react-router-dom";
 import { useWatchLater } from "../../Context/watchLaterContext";
 
 const SingleVideo = () => {
   const { videoId } = useParams();
 
-  const [dropdown, setDropdown] = useState(false);
-
-  const { getSingleVideo, singleVideo, issinglecardLoading, singlecardError } =
-    useSingleVideo();
-  const { getAllVideos, allVideos, iscardLoading, cardError } = useVideo();
+  const { getSingleVideo, singleVideo } = useSingleVideo();
+  const { getAllVideos, allVideos } = useVideo();
 
   const { addItemToWatchLater, removeItemFromWatchLater, watchLaterVideos } =
     useWatchLater();
 
   const [filteredVideos, setFilteredVideos] = useState([]);
 
-  const trimHeading = (word, n) => {
-    if (word.length > n) {
-      return word.substring(0, n - 3) + "...";
-    }
-    return word;
-  };
   useEffect(() => {
     getSingleVideo(videoId);
     getAllVideos();
