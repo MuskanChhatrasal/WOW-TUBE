@@ -10,6 +10,8 @@ import { VideoProvider } from "./Context/videoContext";
 import { SingleVideoProvider } from "./Context/singleVideoContext";
 import { WatchLaterProvider } from "./Context/watchLaterContext";
 import { HistoryProvider } from "./Context/historyContext";
+import { PlaylistProvider } from "./Context/playlistContext";
+import { ToastProvider } from "./Context/toastContext";
 
 // Call make Server
 makeServer();
@@ -17,19 +19,23 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <CategoryProvider>
-          <HistoryProvider>
-            <WatchLaterProvider>
-              <VideoProvider>
-                <SingleVideoProvider>
-                  <App />
-                </SingleVideoProvider>
-              </VideoProvider>
-            </WatchLaterProvider>
-          </HistoryProvider>
-        </CategoryProvider>
-      </AuthProvider>
+      <ToastProvider>
+        <AuthProvider>
+          <CategoryProvider>
+            <PlaylistProvider>
+              <HistoryProvider>
+                <WatchLaterProvider>
+                  <VideoProvider>
+                    <SingleVideoProvider>
+                      <App />
+                    </SingleVideoProvider>
+                  </VideoProvider>
+                </WatchLaterProvider>
+              </HistoryProvider>
+            </PlaylistProvider>
+          </CategoryProvider>
+        </AuthProvider>
+      </ToastProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
