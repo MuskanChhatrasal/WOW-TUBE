@@ -1,10 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useHistory } from "../../Context/historyContext";
+import { usePlaylist } from "../../Context/playlistContext";
 import { useWatchLater } from "../../Context/watchLaterContext";
+import { CardVideoPlaylist } from "./cardVideoPlaylist";
 
 const VideoCard = ({ video }) => {
   const [dropdown, setDropdown] = useState(false);
+
+  const [isSavetoPlaylistClicked, setIsSavetoPlaylistClicked] = useState(false);
+  const [clickedCreateNewPlaylist, setClickedCreateNewPlaylist] =
+    useState(false);
+  // const [isMoreOptions, setIsMoreOptions] = useState(false);
+
+  const [playlistDetails, setPlaylistDetails] = useState({
+    title: "",
+    description: "",
+    image: {
+      src: "",
+      alt: "",
+    },
+    isInputError: false,
+  });
+
+  const { getAllPlaylists, addNewPlaylist, playlistState } = usePlaylist();
+
+  const ref = useRef(null);
+
+  const {
+    addNewplaylistLoading,
+    addVideoToplaylistLoading,
+    removeVideoFromPlaylistLoading,
+    playlists,
+    playlistError,
+  } = playlistState;
 
   const location = useLocation();
   const trimHeading = (word, n) => {
@@ -27,13 +56,49 @@ const VideoCard = ({ video }) => {
     getWatchLaterVideos();
   }, []);
 
-  // const handleDropDown = () => {
-  //   setDropdown(!dropdown);
+  useEffect(() => {
+    const clickHandler = (event) => {
+      if (
+        isSavetoPlaylistClicked &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        setIsSavetoPlaylistClicked(false);
+      }
+    };
+    document.addEventListener("click", clickHandler);
 
-  //   setTimeout(() => {
-  //     setDropdown(!dropdown);
-  //   }, 500);
-  // };
+    return () => document.removeEventListener("click", clickHandler);
+  }, [isSavetoPlaylistClicked]);
+
+  useEffect(() => {
+    getAllPlaylists();
+  }, [
+    clickedCreateNewPlaylist,
+    addVideoToplaylistLoading,
+    removeVideoFromPlaylistLoading,
+  ]);
+
+  useEffect(() => {
+    console.log(playlists);
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPlaylistDetails({ ...playlistDetails, isInputError: false });
+    }, 2000);
+  }, [playlistDetails.isInputError]);
+
+  const createPlaylistClickHandler = () => {
+    if (playlistDetails.title === "") {
+      setPlaylistDetails({ ...playlistDetails, isInputError: true });
+    } else {
+      setClickedCreateNewPlaylist(false);
+      addNewPlaylist(playlistDetails);
+      playlistDetails.title = "";
+    }
+    setIsSavetoPlaylistClicked(true);
+  };
 
   return (
     <div
@@ -96,7 +161,13 @@ const VideoCard = ({ video }) => {
                 Remove from History
               </li>
             ) : (
-              <li>
+              <li
+                onClick={() => {
+                  setIsSavetoPlaylistClicked(true);
+                  // setDropdown(!dropdown);
+                  // setIsMoreOptions(false);
+                }}
+              >
                 <i
                   className="fas fa-play"
                   style={{ marginRight: "0.5rem" }}
@@ -106,6 +177,81 @@ const VideoCard = ({ video }) => {
             )}
           </ul>
         )}
+      </div>
+
+      {/* Playlist div */}
+
+      <div
+        className={
+          isSavetoPlaylistClicked ? "playlist-main-container" : "display-none"
+        }
+      >
+        <div className="playlist-first-div">
+          <h3 className="h3 playlist-saveTo-text">Save to...</h3>
+          <i
+            class="fas fa-times playlist-cross"
+            onClick={() => setIsSavetoPlaylistClicked(false)}
+          ></i>
+        </div>
+        {/* <div>
+          {playlists.length > 0 &&
+            playlists.map((playlist) => {
+              return (
+                <CardVideoPlaylist
+                  playlist={playlist}
+                  item={video}
+                  key={video._id}
+                />
+              );
+            })}
+        </div> */}
+
+        <div className="playlist-second-div">
+          <input type="checkbox" className="playlist-checkbox" />
+          <span className="playlist-title">Title</span>
+        </div>
+        <div
+          className="playlist-third-div"
+          onClick={() => setClickedCreateNewPlaylist(true)}
+        >
+          <i class="fas fa-plus playlist-plus"></i>
+          <h3 className="h3 new-plyalist-head">Create New Playlist</h3>
+        </div>
+
+        <div
+          className={
+            clickedCreateNewPlaylist
+              ? "playlist-footer-container"
+              : "display-none"
+          }
+        >
+          <input
+            type="text"
+            placeholder="Playlist Name..."
+            className="input-playlist-video-card"
+            onChange={(e) => {
+              setPlaylistDetails({
+                ...playlistDetails,
+                title: e.target.value,
+              });
+              setIsSavetoPlaylistClicked(true);
+            }}
+          />
+          <div className="footer-container">
+            <button
+              className="btn-primary cancel-btn"
+              onClick={() => setClickedCreateNewPlaylist(false)}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn-primary create-btn"
+              onClick={() => createPlaylistClickHandler()}
+            >
+              Create
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

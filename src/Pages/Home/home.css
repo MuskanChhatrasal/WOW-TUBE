@@ -164,3 +164,173 @@
     height: 5rem;
     margin-bottom: 1rem;
 }
+
+
+
+
+
+.btn-transparent {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+/* Playlist Styling */
+
+.playlist-main-container{
+    background-color: #2c2e3b;
+    /* height: 10rem; */
+    /* width: 14rem; */
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: fit-content;
+    position: relative;
+    margin-top: -10.8rem;
+    z-index: 2;
+    
+}
+.h3{
+   font-size: 1rem;
+}
+
+.playlist-first-div{
+    display: flex;
+    justify-content: space-between;
+}
+.playlist-third-div{
+    display: flex;
+}
+.playlist-second-div{
+    display: flex;
+    gap: 0.5rem
+}
+
+.playlist-title{
+    margin-top: -0.2rem;
+}
+
+.playlist-checkbox{
+    width: 2rem;
+    height: 1.05rem;
+}
+
+.new-plyalist-head{
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+.playlist-plus{
+    margin-left: 0.5rem;
+    margin-top: 0.6rem;
+}
+.playlist-saveTo-text{
+    margin-left: 0.5rem;
+}
+
+.playlist-cross{
+    margin-right: 0.5rem;
+    margin-top: 0.6rem;
+}
+.playlist-footer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+.cancel-btn{
+    margin-left: 0.5rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    cursor: pointer;
+}
+.create-btn{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 0.3rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    cursor: pointer;
+}
+
+.input-playlist-video-card {
+    width: 10.8rem;
+    line-height: 1.5rem;
+    border: none;
+    outline: none;
+    margin-left: 0.5rem;
+}
+
+/* Playlist styling end */
+
+/* .font-semibold {
+    font-weight: 600;
+}
+.pdr-0-5 {
+    padding-right: 0.5rem;
+} */
+
+/* .container-playlist-video-card {
+    position: absolute;
+    width: fit-content;
+    background-color: #cfcccc1a;
+    z-index: 2;
+    top: -7rem;
+    left: 0;
+    padding: 1rem;
+} */
+
+/* .flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-gap-1{
+    gap: 1rem;
+}
+
+.flex-gap-0-5{
+    gap: 0.5rem;
+} */
+
+/* input[type="checkbox"] {
+    width: 2rem;
+    height: 1.05rem;
+    accent-color: var(--primary-color)
+}
+
+.input-playlist-video-card {
+    width: 10rem;
+    line-height: 2rem;
+    border: none;
+    outline: none;
+}
+
+.input-playlist-video-card-error {
+    color: var(--red);
+}
+.btn-create-playlist-video-card {
+    padding: 3px 7px;
+    width: fit-content;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+} */
