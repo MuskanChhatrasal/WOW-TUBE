@@ -164,7 +164,7 @@ const VideoCard = ({ video }) => {
               <li
                 onClick={() => {
                   setIsSavetoPlaylistClicked(true);
-                  // setDropdown(!dropdown);
+                  setDropdown(false);
                   // setIsMoreOptions(false);
                 }}
               >
@@ -193,7 +193,7 @@ const VideoCard = ({ video }) => {
             onClick={() => setIsSavetoPlaylistClicked(false)}
           ></i>
         </div>
-        {/* <div>
+        <div>
           {playlists.length > 0 &&
             playlists.map((playlist) => {
               return (
@@ -204,12 +204,12 @@ const VideoCard = ({ video }) => {
                 />
               );
             })}
-        </div> */}
+        </div>
 
-        <div className="playlist-second-div">
+        {/* <div className="playlist-second-div">
           <input type="checkbox" className="playlist-checkbox" />
           <span className="playlist-title">Title</span>
-        </div>
+        </div> */}
         <div
           className="playlist-third-div"
           onClick={() => setClickedCreateNewPlaylist(true)}
