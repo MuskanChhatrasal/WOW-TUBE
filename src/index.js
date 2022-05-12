@@ -10,6 +10,7 @@ import { VideoProvider } from "./Context/videoContext";
 import { SingleVideoProvider } from "./Context/singleVideoContext";
 import { WatchLaterProvider } from "./Context/watchLaterContext";
 import { HistoryProvider } from "./Context/historyContext";
+import { PlaylistProvider } from "./Context/playlistContext";
 
 // Call make Server
 makeServer();
@@ -19,15 +20,17 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <CategoryProvider>
-          <HistoryProvider>
-            <WatchLaterProvider>
-              <VideoProvider>
-                <SingleVideoProvider>
-                  <App />
-                </SingleVideoProvider>
-              </VideoProvider>
-            </WatchLaterProvider>
-          </HistoryProvider>
+          <PlaylistProvider>
+            <HistoryProvider>
+              <WatchLaterProvider>
+                <VideoProvider>
+                  <SingleVideoProvider>
+                    <App />
+                  </SingleVideoProvider>
+                </VideoProvider>
+              </WatchLaterProvider>
+            </HistoryProvider>
+          </PlaylistProvider>
         </CategoryProvider>
       </AuthProvider>
     </BrowserRouter>

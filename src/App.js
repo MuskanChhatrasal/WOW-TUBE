@@ -13,6 +13,7 @@ import { RestrictAuth } from "./Components/RequireAuth/restrictedAuth";
 import Videos from "./Pages/Videos/videos";
 import SingleVideo from "./Pages/SingleVideo/singleVideo";
 import { RequireAuth } from "./Components/RequireAuth/requireAuth";
+import PlaylistDetails from "./Pages/Playlist/playlistDetails";
 
 function App() {
   const location = useLocation();
@@ -24,13 +25,22 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/playlist" element={<Playlist />} />
+        <Route
+          path="/playlist/:playlistId"
+          element={<PlaylistDetails />}
+          exact
+        />
+        {/* <Route
+          path="/playlist/:singleplaylistId/:singlevideoId"
+          element={<SingleVideoPlaylist />}
+          exact
+        /> */}
         <Route element={<RequireAuth />}>
           <Route path="/history" element={<History />} />
           <Route path="/watchlater" element={<WatchLater />} />
         </Route>
-        <Route path="/liked" element={<Liked />} />
+        <Route path="/liked" element={<Liked />} />/
         <Route path="/videos" element={<Videos />} />
         <Route path="/singlevideo/:videoId" element={<SingleVideo />} />
         <Route element={<RestrictAuth />}>
