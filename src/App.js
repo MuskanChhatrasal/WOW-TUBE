@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Pages/Home/home";
 import History from "./Pages/History/history";
-import Playlist from "./Pages/Playlist/playlist";
+
 import WatchLater from "./Pages/WatchLater/watchLater";
 import Liked from "./Pages/Liked/liked";
 import Navbar from "./Components/Navbar/navbar";
@@ -13,7 +13,7 @@ import { RestrictAuth } from "./Components/RequireAuth/restrictedAuth";
 import Videos from "./Pages/Videos/videos";
 import SingleVideo from "./Pages/SingleVideo/singleVideo";
 import { RequireAuth } from "./Components/RequireAuth/requireAuth";
-import PlaylistDetails from "./Pages/Playlist/playlistDetails";
+import Playlist from "./Pages/PlaylistPage/playlist";
 
 function App() {
   const location = useLocation();
@@ -26,11 +26,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/playlist" element={<Playlist />} />
-        <Route
+        {/* <Route
           path="/playlist/:playlistId"
           element={<PlaylistDetails />}
           exact
-        />
+        /> */}
         {/* <Route
           path="/playlist/:singleplaylistId/:singlevideoId"
           element={<SingleVideoPlaylist />}

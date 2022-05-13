@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useHistory } from "../../Context/historyContext";
 import { usePlaylist } from "../../Context/playlistContext";
 import { useWatchLater } from "../../Context/watchLaterContext";
-import { CardVideoPlaylist } from "./cardVideoPlaylist";
 
 const VideoCard = ({ video }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -186,7 +185,7 @@ const VideoCard = ({ video }) => {
 
       {/* Playlist div */}
 
-      <div
+      {/* <div
         className={
           isSavetoPlaylistClicked ? "playlist-main-container" : "display-none"
         }
@@ -212,10 +211,10 @@ const VideoCard = ({ video }) => {
             })}
         </div>
 
-        {/* <div className="playlist-second-div">
+        <div className="playlist-second-div">
               <input type="checkbox" className="playlist-checkbox" />
               <span className="playlist-title">Title</span>
-            </div> */}
+            </div>
         <div
           className="playlist-third-div"
           onClick={() => {
@@ -261,7 +260,7 @@ const VideoCard = ({ video }) => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
