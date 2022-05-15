@@ -21,7 +21,12 @@ const Playlist = () => {
         {playlists.length > 0 ? (
           <h4
             className="pdl-3 pdt-3 font-semibold"
-            style={{ marginTop: "-65rem", marginLeft: "-3rem", color: "white" }}
+            style={{
+              marginTop: "-65rem",
+              marginLeft: "-3rem",
+              color: "white",
+              marginBottom: "-2rem",
+            }}
           >
             Playlists{" "}
             <small className="text-base font-normal pdl-0-5">

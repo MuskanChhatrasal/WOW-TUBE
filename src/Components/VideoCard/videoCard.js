@@ -102,6 +102,7 @@ const VideoCard = ({ video }) => {
 
   return (
     <div
+      key={video._id}
       className={
         location.pathname === "/"
           ? "video-card featured-card"

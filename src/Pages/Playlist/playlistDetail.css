@@ -1,0 +1,10 @@
+.inner-main-playlist-details{
+    margin-left: 20rem;
+    margin-top: -48rem;
+}
+
+.title-playlistDetail{
+    color: var(--text-white);
+    margin-top: 2rem;
+    margin-bottom: -3rem;
+}

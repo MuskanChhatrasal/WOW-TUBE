@@ -55,12 +55,15 @@ export const CardPlaylist = ({ playlist }) => {
           View Playlist
         </Link>
         <div className="container-btn-playlist-card flex flex-column">
-          <div className="font-semibold">{playlist.title}</div>
+          <div className="title-playlist">{playlist.title}</div>
           <button
             className="btn-remove-playlist btn-transparent"
             onClick={() => removePlaylist(playlist?._id)}
           >
-            <span className="material-icons icon btn-transparent pdr-0-5">
+            <span
+              className="material-icons icon btn-transparent pdr-0-5"
+              style={{ color: "white", marginTop: "-0.2rem" }}
+            >
               delete
             </span>
           </button>

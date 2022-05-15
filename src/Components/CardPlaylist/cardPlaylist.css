@@ -7,7 +7,13 @@
     width: 17rem;
     height: 11rem;
     position: relative;
+    box-shadow: 0 0 8px var(--medium-blue-gray);
+    border: 2px solid var(--dropdown-background);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    margin-top: 2.5rem;
 }
+
 
 .img-card-playlist {
     width: inherit;
@@ -25,6 +31,9 @@
 
 .btn-view-playlist {
     color: #e2e0e2;
+    margin-top: 1.5rem;
+    margin-left: 0rem;
+    cursor: pointer;
 }
 
 .btn-view-playlist:hover {
@@ -44,4 +53,10 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.title-playlist{
+    color: var(--text-white);
+    font-size: 1.5rem;
+    margin-left: 0rem;
 }

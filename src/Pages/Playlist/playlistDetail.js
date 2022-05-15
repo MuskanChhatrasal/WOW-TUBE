@@ -30,14 +30,14 @@ export const PlaylistDetails = () => {
       <Sidebar />
       <main className="main-playlist-details">
         {playlist?.videos?.length > 0 ? (
-          <div className="position-relative">
+          <div className="inner-main-playlist-details">
             <button
-              className="btn-clear-all font-semibold"
+              className="button btn-primary"
               onClick={() => removePlaylist(playlistId)}
             >
               Clear Playlist
             </button>
-            <h4 className="pdl-3 pdt-3 font-semibold">
+            <h4 className="title-playlistDetail">
               {`${playlist.title} Playlist`}{" "}
               <small className="text-base font-normal pdl-0-5">
                 {playlist.videos.length === 1
@@ -51,10 +51,13 @@ export const PlaylistDetails = () => {
             {playlist?.title} Playlist Empty
           </h4>
         )}
-        <div className="flex flex-gap-3 flex-wrap pd-3 pdt-1">
+        <div
+          className="flex flex-gap-3 flex-wrap pd-3 pdt-1"
+          style={{ marginLeft: "20rem" }}
+        >
           {playlist?.videos?.length > 0 ? (
             playlist.videos.map((item) => (
-              <VideoCard key={item._id} item={item} />
+              <VideoCard key={item._id} video={item} />
             ))
           ) : (
             <div className="conatiner-liked-videos-empty">
