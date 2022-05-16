@@ -15,7 +15,7 @@ export const Toast = ({ toast, handleToastClose }) => {
 
   return (
     <div
-      className={`text-toast ${status}`}
+      className={`toast ${status}`}
       style={{ display: "flex", justifyContent: "center" }}
     >
       {msg}

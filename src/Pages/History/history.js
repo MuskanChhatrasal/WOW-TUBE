@@ -27,7 +27,7 @@ const History = () => {
                 return <VideoCard video={video} key={video._id} />;
               })
             ) : (
-              <h1>No Videos added to Watch Later</h1>
+              <h1>No Videos added </h1>
             )}
           </div>
           {HistoryData.length > 0 ? (
