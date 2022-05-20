@@ -2,14 +2,11 @@ import React, { useEffect } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
 import { usePlaylist } from "../../Context/playlistContext";
 import "./playlist.css";
-// import { Link } from "react-router-dom";
 import { CardPlaylist } from "../../Components/CardPlaylist/cardPlaylist";
-// import { CardPlaylist } from "../../Components/CardPlaylist/cardPlaylist";
 
 const Playlist = () => {
   const { getAllPlaylists, playlistState } = usePlaylist();
-  const { playlistLoading, playlists, playlistError, removeplaylistLoading } =
-    playlistState;
+  const { playlists, removeplaylistLoading } = playlistState;
 
   useEffect(() => {
     getAllPlaylists();

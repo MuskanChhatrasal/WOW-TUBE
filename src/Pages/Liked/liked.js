@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../Components/Sidebar/sidebar";
-import VideoCard from "../../Components/VideoCard/videoCard";
 import { useLikedVideo } from "../../Context/likeVideoContext";
-import { useWatchLater } from "../../Context/watchLaterContext";
 import "./liked.css";
 import LikeVideoCard from "./likeVideoCard";
 
@@ -29,14 +27,7 @@ const Liked = ({ item }) => {
         <div className="videos-flex">
           {LikedVideos ? (
             LikedVideos.map((video) => {
-              return (
-                <LikeVideoCard
-                  key={video._id}
-                  video={video}
-                  // watchLaterVideos={watchLaterVideos}
-                  // LikedVideos={LikedVideos}
-                />
-              );
+              return <LikeVideoCard key={video._id} video={video} />;
             })
           ) : (
             <h1>No Videos added to Watch Later</h1>

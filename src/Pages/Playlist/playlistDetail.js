@@ -9,12 +9,8 @@ import Sidebar from "../../Components/Sidebar/sidebar";
 export const PlaylistDetails = () => {
   const { getVideosFromPlaylist, removePlaylist, playlistState } =
     usePlaylist();
-  const {
-    playlistLoading,
-    playlist,
-    removeplaylistLoading,
-    removeVideoFromPlaylistLoading,
-  } = playlistState;
+  const { playlist, removeplaylistLoading, removeVideoFromPlaylistLoading } =
+    playlistState;
   const { playlistId } = useParams();
 
   useEffect(() => {

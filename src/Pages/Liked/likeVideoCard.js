@@ -12,7 +12,6 @@ const LikeVideoCard = ({ video }) => {
   const [isSavetoPlaylistClicked, setIsSavetoPlaylistClicked] = useState(false);
   const [clickedCreateNewPlaylist, setClickedCreateNewPlaylist] =
     useState(false);
-  // const [isMoreOptions, setIsMoreOptions] = useState(false);
 
   const [playlistDetails, setPlaylistDetails] = useState({
     title: "",
@@ -52,12 +51,8 @@ const LikeVideoCard = ({ video }) => {
   } = useWatchLater();
 
   const { addVideoToHistory } = useHistory();
-  const {
-    // getLikedVideos,
-    LikedVideos,
-    addItemToLikedVideos,
-    removeItemFromLikedVideos,
-  } = useLikedVideo();
+  const { LikedVideos, addItemToLikedVideos, removeItemFromLikedVideos } =
+    useLikedVideo();
 
   useEffect(() => {
     getWatchLaterVideos();
@@ -168,7 +163,6 @@ const LikeVideoCard = ({ video }) => {
               onClick={() => {
                 setIsSavetoPlaylistClicked(true);
                 setDropdown(false);
-                // setIsMoreOptions(false);
               }}
             >
               <i className="fas fa-play" style={{ marginRight: "0.5rem" }}></i>

@@ -96,24 +96,6 @@ const SingleVideo = () => {
                 </span>
               )}
 
-              {/* {LikedVideos.some((it) => it._id === singleVideo._id) ? (
-                <button
-                  className="m1 button btn-primary btn-with-icon"
-                  onClick={() => removeItemFromLikedVideos(singleVideo._id)}
-                >
-                  <i className="p1-right fa-solid fa-thumbs-up"></i>
-                  Remove from Liked
-                </button>
-              ) : (
-                <button
-                  className="m1 button btn-primary btn-with-icon"
-                  onClick={() => addItemToLikedVideos(singleVideo)}
-                >
-                  <i className="p1-right fa-solid fa-thumbs-up"></i>
-                  Add to Liked
-                </button>
-              )} */}
-
               <span className="watchLater-btn">
                 {watchLaterVideos.some(
                   (item) => item._id === singleVideo._id

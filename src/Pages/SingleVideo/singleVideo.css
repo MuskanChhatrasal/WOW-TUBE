@@ -12,7 +12,6 @@
 
 .right-container{
     width: 20rem;
-    /* background-color: blueviolet; */
     margin-top: -2rem;
     margin-left: 2rem;
 }
@@ -20,7 +19,6 @@
 .header-container{
     display: flex;
     height: 20rem;
-    /* justify-content: space-between; */
 }
 
 .left-header-container{
@@ -111,11 +109,7 @@
     font-size: 1.25rem;
     /* width: 20rem; */
 }
-/* .left-bottomUpper{
-    display: inline-block;
-    height: 8rem;
-    width: 20rem;
-} */
+
 .bottom-time{
     color: var(--text-white);
     margin-top: 1rem;

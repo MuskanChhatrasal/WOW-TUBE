@@ -12,7 +12,6 @@ const VideoCard = ({ video }) => {
   const [isSavetoPlaylistClicked, setIsSavetoPlaylistClicked] = useState(false);
   const [clickedCreateNewPlaylist, setClickedCreateNewPlaylist] =
     useState(false);
-  // const [isMoreOptions, setIsMoreOptions] = useState(false);
 
   const [playlistDetails, setPlaylistDetails] = useState({
     title: "",
@@ -174,7 +173,6 @@ const VideoCard = ({ video }) => {
                 onClick={() => {
                   setIsSavetoPlaylistClicked(true);
                   setDropdown(false);
-                  // setIsMoreOptions(false);
                 }}
               >
                 <i

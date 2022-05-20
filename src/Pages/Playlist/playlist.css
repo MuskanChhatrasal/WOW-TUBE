@@ -7,6 +7,13 @@
     height: fit-content;
     width: 17rem;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-gap-3 {
+    gap: 3rem;
+}
 
 .container-img-card-playlist {
     width: 17rem;
@@ -17,6 +24,13 @@
 .img-card-playlist {
     width: inherit;
     height: inherit;
+}
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-normal {
+    font-weight: 400;
 }
 
 .container-overlay-img-playlist-card {
@@ -53,13 +67,6 @@
 .pdl-3 {
     padding-left: 3rem;
 }
-
-.font-semibold {
-    font-weight: 600;
-}
-.font-normal {
-    font-weight: 400;
-}
 .text-base {
     font-size: 1rem;
 }
@@ -68,12 +75,6 @@
 }
 .flex{
     display: flex;
-}
-.flex-wrap{
-    flex-wrap: wrap;
-}
-.flex-gap-3 {
-    gap: 3rem;
 }
 .pdt-1 {
     padding-top: 1rem;
