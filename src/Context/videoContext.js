@@ -1,27 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
-
-const InitialSharedState = {
-  error: null,
-  loading: false,
-  data: [],
-};
-
-const SharedReducer = (state, { type, payload }) => {
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true };
-    case "SUCCESS":
-      return { ...state, loading: false, data: payload };
-    case "ERROR":
-      return { ...state, loading: false, error: payload };
-  }
-};
+import { InitialState } from "../Utils/initialState";
+import { Reducer } from "../Utils/reducer";
 
 const VideoContext = createContext();
 
 const VideoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(SharedReducer, InitialSharedState);
+  const [state, dispatch] = useReducer(Reducer, InitialState);
   const { data: allVideos, loading: iscardLoading, error: cardError } = state;
 
   const getAllVideos = async () => {
