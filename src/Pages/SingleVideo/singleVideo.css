@@ -107,7 +107,7 @@
     height: 1rem; 
     margin-bottom: 2rem;
     font-size: 1.25rem;
-    /* width: 20rem; */
+    
 }
 
 .bottom-time{
@@ -149,7 +149,6 @@
 .bottom-likes{
     color: var(--text-white);
     margin-top: 1rem;
-    /* margin-right: 0.5rem; */
     font-size: 1rem;
     background-color: #2c2e3b95;
     width: 8rem;
@@ -241,9 +240,6 @@
 }
 
 .desc-container{
-    /* margin-left: 0rem; */
-    /* height: 8rem;
-    width: 50rem; */
     margin-top: 2rem;
     margin-bottom: 2rem;
     color: var(--text-white);

@@ -45,7 +45,7 @@ form .input-box input {
     outline: none;
     padding: 0 1rem;
     color: var(--primary-color);
-    border: 0.1rem solid var(--background-color);
+    border: 0.1rem solid #85828280;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
 }
@@ -62,7 +62,7 @@ form .policy {
 }
 
 form h3 {
-    color: var(--text-white);
+    color: var(--primary-color);
     border-radius: 0.5rem;
     font-size: 1.2rem;
     font-weight: 500;
@@ -83,7 +83,7 @@ form h3 {
 }
 
 form .text h3 a {
-    color: var(--text-white);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
