@@ -13,14 +13,33 @@ const WatchLater = () => {
   return (
     <div className="watchLater-flex">
       <Sidebar />
-      <div className="videos-flex">
-        {watchLaterVideos ? (
-          watchLaterVideos.map((video) => {
-            return <VideoCard video={video} key={video._id} />;
-          })
-        ) : (
-          <h1>No Videos added to Watch Later</h1>
-        )}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <div className="videos-flex">
+          {watchLaterVideos ? (
+            watchLaterVideos.map((video) => {
+              return <VideoCard video={video} key={video._id} />;
+            })
+          ) : (
+            <h1>No Videos added to Watch Later</h1>
+          )}
+
+          {watchLaterVideos.length === 0 && (
+            <h1
+              style={{
+                color: "white",
+                marginLeft: "15rem",
+                marginTop: "4rem",
+              }}
+            >
+              No videos added to watchLater yet!!
+            </h1>
+          )}
+        </div>
       </div>
     </div>
   );

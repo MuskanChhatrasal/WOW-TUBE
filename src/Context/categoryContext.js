@@ -1,27 +1,12 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import axios from "axios";
+import { InitialState } from "../Utils/initialState";
+import { Reducer } from "../Utils/reducer";
 
-export const InitialSharedState = {
-  error: null,
-  loading: false,
-  data: [],
-};
-
-export const SharedReducer = (state, { type, payload }) => {
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true };
-    case "SUCCESS":
-      return { ...state, loading: false, data: payload };
-    case "ERROR":
-      return { ...state, loading: false, error: payload };
-  }
-};
-
-const CategoryContext = createContext(InitialSharedState);
+const CategoryContext = createContext(InitialState);
 
 const CategoryProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(SharedReducer, InitialSharedState);
+  const [state, dispatch] = useReducer(Reducer, InitialState);
   const {
     data: categoryData,
     loading: ischipLoading,

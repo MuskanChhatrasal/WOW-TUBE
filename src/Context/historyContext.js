@@ -1,27 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
+import { InitialState } from "../Utils/initialState";
+import { Reducer } from "../Utils/reducer";
 
-const InitialSharedState = {
-  error: null,
-  loading: false,
-  data: [],
-};
-
-const SharedReducer = (state, { type, payload }) => {
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true };
-    case "SUCCESS":
-      return { ...state, loading: false, data: payload };
-    case "ERROR":
-      return { ...state, loading: false, error: payload };
-  }
-};
-
-const HistoryContext = createContext(InitialSharedState);
+const HistoryContext = createContext(InitialState);
 
 const HistoryProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(SharedReducer, InitialSharedState);
+  const [state, dispatch] = useReducer(Reducer, InitialState);
   const {
     data: HistoryData,
     loading: isHistoryLoading,

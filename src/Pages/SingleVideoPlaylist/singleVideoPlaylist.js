@@ -1,50 +1,42 @@
-import React, { useState, useEffect } from "react";
-import Sidebar from "../../Components/Sidebar/sidebar";
-import VideoCard from "../../Components/VideoCard/videoCard";
-import "./singleVideo.css";
+import "../SingleVideo/singleVideo.css";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSingleVideo } from "../../Context/singleVideoContext";
-import { useVideo } from "../../Context/videoContext";
+import { usePlaylist } from "../../Context/playlistContext";
 import SingleVideoCard from "../../Components/SingleVideoCard/singleVideoCard";
+import Sidebar from "../../Components/Sidebar/sidebar";
 import { useWatchLater } from "../../Context/watchLaterContext";
-import { useLikedVideo } from "../../Context/likeVideoContext";
+import VideoCard from "../../Components/VideoCard/videoCard";
 
-const SingleVideo = () => {
-  const { videoId } = useParams();
+export const SingleVideoPlaylist = () => {
+  const { singleplaylistId, singlevideoId } = useParams();
 
   const { getSingleVideo, singleVideo } = useSingleVideo();
-  const { getAllVideos, allVideos } = useVideo();
 
+  const { getVideosFromPlaylist, playlistState } = usePlaylist();
+  const { playlistLoading, playlist } = playlistState;
+
+  const [filteredVideos, setFilteredVideos] = useState([]);
   const { addItemToWatchLater, removeItemFromWatchLater, watchLaterVideos } =
     useWatchLater();
 
-  const [filteredVideos, setFilteredVideos] = useState([]);
-
-  const {
-    getLikedVideos,
-    addItemToLikedVideos,
-    removeItemFromLikedVideos,
-    LikedVideos,
-  } = useLikedVideo();
+  useEffect(() => {
+    getVideosFromPlaylist(singleplaylistId);
+  }, []);
 
   useEffect(() => {
-    getSingleVideo(videoId);
-    getLikedVideos();
-    getAllVideos();
-  }, [videoId]);
+    getSingleVideo(singlevideoId);
+  }, []);
 
   useEffect(() => {
-    let tempVideos = [...allVideos].filter(
-      (video) =>
-        video.categoryName === singleVideo.categoryName &&
-        video._id !== singleVideo._id
-    );
-    setFilteredVideos(tempVideos);
-  }, [singleVideo]);
+    setTimeout(() => {
+      let tempVideos = [...playlist?.videos].filter(
+        (video) => video._id !== singlevideoId
+      );
+      setFilteredVideos(tempVideos);
+    }, 0);
+  }, [playlistLoading]);
 
-  useEffect(() => {
-    console.log(videoId);
-  });
   return (
     <div className="main-singleVideo-container">
       <Sidebar />
@@ -74,27 +66,10 @@ const SingleVideo = () => {
               </span>
             </div>
             <div className="right-footer-container">
-              {LikedVideos.some((it) => it._id === singleVideo._id) ? (
-                <span className="like-btn">
-                  <i class="fas fa-heart like-icon"></i>
-                  <span
-                    className="like-txt"
-                    onClick={() => removeItemFromLikedVideos(singleVideo._id)}
-                  >
-                    Unlike
-                  </span>
-                </span>
-              ) : (
-                <span className="like-btn">
-                  <i class="fas fa-heart like-icon"></i>
-                  <span
-                    className="like-txt"
-                    onClick={() => addItemToLikedVideos(singleVideo)}
-                  >
-                    Like
-                  </span>
-                </span>
-              )}
+              <span className="like-btn">
+                <i class="fas fa-heart like-icon"></i>
+                <span className="like-txt">Like</span>
+              </span>
 
               <span className="watchLater-btn">
                 {watchLaterVideos.some(
@@ -131,17 +106,14 @@ const SingleVideo = () => {
       </div>
       <div className="right-container">
         <section>
+          <h4>{playlist?.title} playlist Videos</h4>
           {filteredVideos.length > 0 ? (
-            filteredVideos
-              .slice(0, 3)
-              .map((video) => <VideoCard video={video} />)
+            filteredVideos.map((video) => <VideoCard video={video} />)
           ) : (
-            <div>Failed to load recommended videos</div>
+            <div>No more videos in {playlist?.title} playlist</div>
           )}
         </section>
       </div>
     </div>
   );
 };
-
-export default SingleVideo;

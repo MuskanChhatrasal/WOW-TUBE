@@ -1,0 +1,25 @@
+.container-toast {
+    list-style: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 0;
+}
+
+.toast {
+    border-radius: 0.6rem;
+    color: var(--text-white);
+    align-items: center;
+    padding: 1rem;
+    width: 15rem;
+    margin-bottom: 0.8rem;
+    z-index: 3;
+    margin-right: 0.5rem;
+}
+
+.added {
+    background-color: var(--success-bg);
+}
+
+.removed {
+    background-color: var(--error-bg);
+}

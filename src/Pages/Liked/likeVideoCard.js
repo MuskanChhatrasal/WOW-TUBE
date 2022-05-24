@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { CardVideoPlaylist } from "../../Components/VideoCard/cardVideoPlaylist";
 import { useHistory } from "../../Context/historyContext";
 import { useLikedVideo } from "../../Context/likeVideoContext";
 import { usePlaylist } from "../../Context/playlistContext";
 import { useWatchLater } from "../../Context/watchLaterContext";
-import { CardVideoPlaylist } from "./cardVideoPlaylist";
 
-const VideoCard = ({ video }) => {
+const LikeVideoCard = ({ video }) => {
   const [dropdown, setDropdown] = useState(false);
 
   const [isSavetoPlaylistClicked, setIsSavetoPlaylistClicked] = useState(false);
@@ -50,13 +50,9 @@ const VideoCard = ({ video }) => {
     watchLaterVideos,
   } = useWatchLater();
 
-  const { addVideoToHistory, removeVideoFromHistory } = useHistory();
-  const {
-    // getLikedVideos,
-    LikedVideos,
-    addItemToLikedVideos,
-    removeItemFromLikedVideos,
-  } = useLikedVideo();
+  const { addVideoToHistory } = useHistory();
+  const { LikedVideos, addItemToLikedVideos, removeItemFromLikedVideos } =
+    useLikedVideo();
 
   useEffect(() => {
     getWatchLaterVideos();
@@ -105,22 +101,8 @@ const VideoCard = ({ video }) => {
     }
     setIsSavetoPlaylistClicked(true);
   };
-
   return (
-    <div
-      key={video._id}
-      className={
-        location.pathname === "/"
-          ? "video-card featured-card"
-          : "video-card" && location.pathname === "/videos"
-          ? "video-card category-card"
-          : ("video-card" && location.pathname === "/watchlater") ||
-            location.pathname === "/history" ||
-            location.pathname === "/liked"
-          ? "video-card watchlater-card"
-          : "video-card"
-      }
-    >
+    <div key={video._id} className="video-card watchlater-card">
       <Link
         to={`/singlevideo/${video._id}`}
         onClick={() => addVideoToHistory(video)}
@@ -160,28 +142,32 @@ const VideoCard = ({ video }) => {
               </li>
             )}
 
-            {location.pathname === "/history" ? (
-              <li onClick={() => removeVideoFromHistory(video._id)}>
+            {LikedVideos.some((it) => it._id === video._id) ? (
+              <li onClick={() => removeItemFromLikedVideos(video._id)}>
                 <i
                   className="fas fa-play"
                   style={{ marginRight: "0.5rem" }}
                 ></i>
-                Remove from History
+                Remove from Liked
               </li>
             ) : (
-              <li
-                onClick={() => {
-                  setIsSavetoPlaylistClicked(true);
-                  setDropdown(false);
-                }}
-              >
+              <li onClick={() => addItemToLikedVideos(video)}>
                 <i
                   className="fas fa-play"
                   style={{ marginRight: "0.5rem" }}
                 ></i>
-                Add to Playlist
+                Add to like Again
               </li>
             )}
+            <li
+              onClick={() => {
+                setIsSavetoPlaylistClicked(true);
+                setDropdown(false);
+              }}
+            >
+              <i className="fas fa-play" style={{ marginRight: "0.5rem" }}></i>
+              Add to Playlist
+            </li>
           </ul>
         )}
       </div>
@@ -213,10 +199,6 @@ const VideoCard = ({ video }) => {
             })}
         </div>
 
-        {/* <div className="playlist-second-div">
-          <input type="checkbox" className="playlist-checkbox" />
-          <span className="playlist-title">Title</span>
-        </div> */}
         <div
           className="playlist-third-div"
           onClick={() => setClickedCreateNewPlaylist(true)}
@@ -264,4 +246,4 @@ const VideoCard = ({ video }) => {
   );
 };
 
-export default VideoCard;
+export default LikeVideoCard;
