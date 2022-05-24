@@ -73,10 +73,10 @@ const Login = () => {
           className="text"
           style={{ marginTop: "2rem", marginLeft: "-1rem" }}
         >
-          <h3>
+          <h3 style={{ color: "white" }}>
             Not having an account?
             <Link to="/signup">
-              <a>Signup now</a>
+              <a style={{ color: "white" }}>Signup now</a>
             </Link>
           </h3>
         </div>

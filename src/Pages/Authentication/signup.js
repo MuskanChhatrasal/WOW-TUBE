@@ -116,7 +116,7 @@ const Signup = () => {
               setUserDetails({ ...userDetails, terms: e.target.value })
             }
           />
-          <h3>I accept all terms & condition</h3>
+          <h3 style={{ color: "white" }}>I accept all terms & condition</h3>
         </div>
         <div>
           <input
@@ -127,10 +127,10 @@ const Signup = () => {
           />
         </div>
         <div className="text">
-          <h3 style={{ marginLeft: "0.2rem" }}>
+          <h3 style={{ marginLeft: "0.2rem", color: "white" }}>
             Already have an account?
             <Link to="/login">
-              <a>Login now</a>
+              <a style={{ color: "white" }}>Login now</a>
             </Link>
           </h3>
         </div>
